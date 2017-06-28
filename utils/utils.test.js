@@ -11,6 +11,14 @@ it('should add two numbers', () => {
   // }
 });
 
+it('should async add two numbers', (done) => {
+  utils.asyncAdd(4, 3, (sum) => {
+    expect(sum).toBe(7).toBeA('number');
+    done();
+  });
+});
+
+
 it('should square a number', () => {
   var res = utils.square(5);
 
@@ -18,6 +26,13 @@ it('should square a number', () => {
   // if (res != 25) {
   //   throw new Error(`Expected 25, but got ${res}`)
   //}
+});
+
+it('should async square a number', (done) => {
+  utils.asyncSquare(5, (squared) => {
+    expect(squared).toBe(25).toBeA('number');
+    done();
+  })
 });
 
 // test to check that first and last names are set
